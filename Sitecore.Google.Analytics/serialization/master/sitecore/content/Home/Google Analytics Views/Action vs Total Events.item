@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {7C0CF999-1BE5-45B0-B803-0519BDD31C79}
+database: master
+path: /sitecore/content/Home/Google Analytics Views/Action vs Total Events
+parent: {F5EB1183-A22F-4DB1-B9EB-72CE24A12155}
+name: Action vs Total Events
+master: {00000000-0000-0000-0000-000000000000}
+template: {A0292B8D-4CFF-4ECF-AF25-B28B8AD33ED2}
+templatekey: _GoogleAnalytics
+
+----version----
+language: en
+version: 1
+revision: 55e2f10d-6d95-4ed0-a339-e419efd55a25
+
+----field----
+field: {3E258FE6-0353-4FEC-BA1D-DCA501BE2B4B}
+name: GoogleAnalytics_Title
+key: googleanalytics_title
+content-length: 22
+
+Action vs Total Events
+----field----
+field: {A4A46EB0-06FC-43B4-8E7B-1348B613437C}
+name: GoogleAnalytics_ReportPeriod
+key: googleanalytics_reportperiod
+content-length: 12
+
+Last 1 Month
+----field----
+field: {1D45BC92-1ED2-4EB5-B7F7-63503F821122}
+name: GoogleAnalytics_Metrics
+key: googleanalytics_metrics
+content-length: 12
+
+Total Events
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20201110T024638Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+55e2f10d-6d95-4ed0-a339-e419efd55a25
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20201110T030317Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

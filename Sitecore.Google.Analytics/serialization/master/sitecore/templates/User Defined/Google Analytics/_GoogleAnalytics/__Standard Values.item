@@ -1,0 +1,126 @@
+----item----
+version: 1
+id: {336E63FF-000F-48F1-A12F-8EB439282468}
+database: master
+path: /sitecore/templates/User Defined/Google Analytics/_GoogleAnalytics/__Standard Values
+parent: {A0292B8D-4CFF-4ECF-AF25-B28B8AD33ED2}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {A0292B8D-4CFF-4ECF-AF25-B28B8AD33ED2}
+templatekey: _GoogleAnalytics
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 251
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema" ><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{C290A860-3EEA-46D6-9B09-B4E4ABA43987}"><r id="{0750854F-2FC7-42B3-913C-D16F963738C2}" ph="main" uid="{F9AF16AF-2550-401F-AC25-BB5C40D77DB6}" /></d></r>
+----version----
+language: en
+version: 1
+revision: f3bfbec8-5411-41d5-a5d8-39a7d70deeb4
+
+----field----
+field: {AF586D7F-106C-4894-9A29-44FF4667121D}
+name: GoogleAnalytics_Analytics_ViewId
+key: googleanalytics_analytics_viewid
+content-length: 9
+
+229229095
+----field----
+field: {5C46FC25-81E8-41C2-803C-C65887D85DC2}
+name: GoogleAnalytics_App_Name
+key: googleanalytics_app_name
+content-length: 13
+
+villagemartbd
+----field----
+field: {A847B493-7864-481A-86FC-D6717E0D7625}
+name: GoogleAnalytics_Credential_File
+key: googleanalytics_credential_file
+content-length: 2352
+
+{
+  "type": "service_account",
+  "project_id": "villagemartbd",
+  "private_key_id": "a58b477c6f09fade41480f3bc7d255570b93969b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDhvg0PnWp9FeC0\npdIs4st22CbmQXs3ZfuREezws0lBfYEEkVrrrTPt8R/YxpcMUmzDGxqA2VwwdwHe\nNkzylM/IrBA4JSuCT8+wVSqZxe4RybU5/SdYr5Vw5TRxvSzWFCpfYNVe2+oyAvjy\nMFqRn+p24ndsDqdz6hNJYjvmBtvutwnyPrs3pE/0DlNKwJ5eOxefCdPeGSNrG0Kz\nkm0BAGiM4rbZP57yy8yCNutp91fuUd6qYzl/oCw+Gd2n4uydnQEFr5ExzB2PPIiN\n7E0NDOz3yk9GfKDWM50+ms/zldpIjpuK2oljxKnToq++RsVwkkR21m8Y6gKPcOnk\nn9pSDJ9ZAgMBAAECggEAaSPXeXpb6r6R1hGVfopzMXsjQwMknHzHWp36uXEHoZUO\nzk3VBwe4tA4mQxTbrUWGmqi5A2I5aelD2Xd5B1MAI/rf4waM6Ti7Bunj2ZMyet5z\npfqepNPCyr42WvM9OshRo/K57mCHB5wSztpulHzi+1QnQxDgNUDEkt1KAK0ZKmj9\n5qeKlQinULnIaG/tM+8TmvwsQcmZH14c7IYhuNReaEVCmHm5qISaG6O/TSnZQuSM\n6+ymrOX1ErBFuwRD4suoUvKJuc5mTHWhsXWD6E0rYk+sMzkL4wIDKuSyBeB2gOcS\nma20XHOa2jo7NKmUP3EiVZGOUSUdxuGcvFPTmg8KcQKBgQD8s4JVtoQWdzZpUD3X\nS6cDRkR7NnDXp+jxubKeBdaFZrBfydqxMPCHM54ik4Gf6Ct9Qbni7LP2MoLmYeBl\nq3O8ZLxViNqaZhwDq619zFbMPzLLhSXW29IvA7QUCB0Fe2ri7Riw5Ed/gOu36UJe\nFpaHyMKT0xuI3M05DOHbmSovCwKBgQDksHMNM/CVmOE7Cz+I8aqGywj78nPWRYA+\nkes6td7qUq7pNiOG6m4NUH5TFC1nZ0m1GwUI7qthjQESntwxEpJhH0P51kxkLCWZ\nqD+jBai2JTnlfOzrwoIe+8zCve1nujSiGYLLBwVF2aIW8JYoz4WRe1rX/vWRLlVt\nkGHXScl5qwKBgQC9Ot86uDYpbJP+QOxOMIScWx4k9huCIma5vMkYtF5z/vXMhSeS\n0IcNd4XPdo325LDMV0+PspkAn8qOInUbLUy5ouW1V4n7XMNVrFV6gm3s/NZYuRgg\n0POP6UIMThcNZ+IelFWNASTZQf1B9xaPxnJqs9ehQtC3qEC1nAP1obiJCQKBgQDd\nI1cNxFT3g+8AFl9owC/iykC0yP2EjI53csjha+7T7gJfV0/Bbb3fuB9/nLpPDEz1\nCNy0h35IBX6tD9rixQ+xRPeJhtU15I6zaEOpE5bSE2tJ46SCUgNbjKezBM+mByRQ\nP5T/WJmbstiPkDPT4OBLDtqIlW3G5uQK35wM/7gIowKBgBpZ5iy1bkciOOdCpChM\n3xUUUOiW2RnSGcRtuE1MDcrs/P0XlY7BsP50gbTSEPZwMNLagS31hPFXG9U4YeK0\nUOD1hextQiGGs1PBPGsNkrPST4j4apXb/6D7UE0I8F254Lq/LLf0xH/3JIJxQjF9\n7wC5JmxLbGgQ8G5QJQDepd7H\n-----END PRIVATE KEY-----\n",
+  "client_email": "villagemartbd-analytics@villagemartbd.iam.gserviceaccount.com",
+  "client_id": "103208699463399235419",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/villagemartbd-analytics%40villagemartbd.iam.gserviceaccount.com"
+}
+
+----field----
+field: {3E258FE6-0353-4FEC-BA1D-DCA501BE2B4B}
+name: GoogleAnalytics_Title
+key: googleanalytics_title
+content-length: 5
+
+$name
+----field----
+field: {A4A46EB0-06FC-43B4-8E7B-1348B613437C}
+name: GoogleAnalytics_ReportPeriod
+key: googleanalytics_reportperiod
+content-length: 11
+
+Last 7 Days
+----field----
+field: {EAD153B7-D86F-40F8-8FA1-76EC72E2AFE8}
+name: GoogleAnalytics_Dimension
+key: googleanalytics_dimension
+content-length: 12
+
+Event Action
+----field----
+field: {1D45BC92-1ED2-4EB5-B7F7-63503F821122}
+name: GoogleAnalytics_Metrics
+key: googleanalytics_metrics
+content-length: 8
+
+Sessions
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20201110T024257Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f3bfbec8-5411-41d5-a5d8-39a7d70deeb4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20201110T024608Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
