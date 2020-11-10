@@ -4,14 +4,6 @@
 @model Sitecore.Google.Analytics.AnalyticsReportResponse
 
 
-@{
-    var blogImageOptions = new Sitecore.Resources.Media.MediaUrlOptions
-    {
-        MaxWidth = 480,
-        AllowStretch = false,
-    };
-}
-
 
 <td>
     @foreach (var dim in Model.Dimension)
