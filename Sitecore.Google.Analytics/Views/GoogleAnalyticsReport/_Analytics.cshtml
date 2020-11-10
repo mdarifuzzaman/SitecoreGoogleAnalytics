@@ -1,0 +1,38 @@
+﻿
+@using Sitecore.Mvc
+@using Google.Apis.AnalyticsReporting.v4.Data
+@model Sitecore.Google.Analytics.AnalyticsReportResponse
+
+
+@{
+    var blogImageOptions = new Sitecore.Resources.Media.MediaUrlOptions
+    {
+        MaxWidth = 480,
+        AllowStretch = false,
+    };
+}
+
+
+<td>
+    @foreach (var dim in Model.Dimension)
+    {
+        @dim
+    }
+</td>
+<td>
+    @RenderEventCount()
+</td>
+
+@helper RenderEventCount()
+{
+    foreach (var metric in Model.Metrics)
+    {
+        DateRangeValues values = metric;
+        for (int k = 0; k < values.Values.Count; k++)
+        {
+            <i>
+                @values.Values[k].ToString()
+            </i>
+        }
+    }
+}

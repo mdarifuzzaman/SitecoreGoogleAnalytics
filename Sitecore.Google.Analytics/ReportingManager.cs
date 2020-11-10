@@ -2,6 +2,7 @@
 using Google.Apis.AnalyticsReporting.v4.Data;
 using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
+using Sitecore.Google.Analytics.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,7 @@ namespace Sitecore.Google.Analytics
             return analyticsService.Reports.BatchGet(getReportsRequest).Execute();
         }
 
-        public static List<AnalyticsReportResponse> GetAnalyticsResponse(string viewId, string jsonCredential)
+        public static List<AnalyticsReportResponse> GetAnalyticsResponse(AnalyticsModel model, string jsonCredential)
         {
             try
             {
@@ -42,15 +43,15 @@ namespace Sitecore.Google.Analytics
                 // Create the DateRange object. Here we want data from last week.
                 var dateRange = new DateRange
                 {
-                    StartDate = DateTime.UtcNow.AddDays(-7).ToString("yyyy-MM-dd"),
+                    StartDate = DateTime.UtcNow.AddDays(model.Period).ToString("yyyy-MM-dd"),
                     EndDate = DateTime.UtcNow.ToString("yyyy-MM-dd")
                 };
                 // Create the Metrics and dimensions object.
-                var metrics = new List<Metric> { new Metric { Expression = "ga:sessions", Alias = "Sessions" } };
-                var dimensions = new List<Dimension> { new Dimension { Name = "ga:pageTitle" } };
+                var metrics = new List<Metric> { new Metric { Expression = model.Metrics, Alias = model.Alias } };
+                var dimensions = new List<Dimension> { new Dimension { Name = model.Dimension } };
 
                 //Get required View Id from configuration
-                var ViewId = viewId;
+                var ViewId = model.ViewId;
 
                 // Create the Request object.
                 var reportRequest = new ReportRequest
@@ -98,6 +99,7 @@ namespace Sitecore.Google.Analytics
                     {
                         var dimensions = row.Dimensions;
                         var metrics = row.Metrics;
+
                         reportResponse.Add(new AnalyticsReportResponse(dimensions, metrics));
                         
                     }

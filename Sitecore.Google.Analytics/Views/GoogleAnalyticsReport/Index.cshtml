@@ -1,0 +1,30 @@
+﻿@model Sitecore.Google.Analytics.Models.AnalyticsResponse
+@using Sitecore.Mvc
+
+
+    <div class="container">
+        <div class="body-content">
+            <div class="card-header">
+                <div class="card-header-title">
+                    <h1>@Model.Model.Title</h1>
+                </div>
+            </div>
+            <div class="card">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Event Name</td>
+                            <td> Event Count</td>
+                        </tr>
+
+                        @foreach (var data in Model.Response)
+                        {
+                            <tr>
+                                @Html.Partial("../GoogleAnalyticsReport/_Analytics", data)
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
