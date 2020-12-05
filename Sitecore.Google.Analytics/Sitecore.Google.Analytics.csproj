@@ -346,12 +346,15 @@
     <Content Include="serialization\master\sitecore\templates\User Defined\Google Analytics\_GoogleAnalytics\Analytics Data\GoogleAnalytics_ReportPeriod.item" />
     <Content Include="serialization\master\sitecore\templates\User Defined\Google Analytics\_GoogleAnalytics\Analytics Data\GoogleAnalytics_Title.item" />
     <Content Include="serialization\master\sitecore\templates\User Defined\Google Analytics\_GoogleAnalytics\__Standard Values.item" />
+    <Content Include="Views\GoogleAnalyticsReport\Chart.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\GoogleAnalyticsReportController.cs" />
     <Compile Include="Models\AnalyticsModel.cs" />
     <Compile Include="Models\AnalyticsResponse.cs" />
+    <Compile Include="Models\ChartModel.cs" />
+    <Compile Include="Models\DataPoint.cs" />
     <Compile Include="PersonalServiceAccountCred.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportingManager.cs" />

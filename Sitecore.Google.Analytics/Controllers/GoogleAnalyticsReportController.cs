@@ -1,8 +1,10 @@
 ﻿
+using Google.Apis.AnalyticsReporting.v4.Data;
 using Newtonsoft.Json;
 using Sitecore.Google.Analytics.Models;
 using Sitecore.Mvc.Controllers;
 using Sitecore.Mvc.Presentation;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace Sitecore.Google.Analytics.Controllers
@@ -23,6 +25,51 @@ namespace Sitecore.Google.Analytics.Controllers
             return View(analyticsResponse);
         }
 
+        // GET: GoogleAnalyticsReport
+        public ActionResult Chart()
+        {
+            var analyticsModel = GetModel();
+            var chart = GetChartName();
+
+            if (string.IsNullOrEmpty(chart))
+            {
+                return View();
+            }
+
+            var response = ReportingManager.GetAnalyticsResponse(analyticsModel, analyticsModel.CredStr);
+            var analyticsResponse = new AnalyticsChartResponse
+            {
+                Model = analyticsModel,
+                Response = response,
+                Chart = chart
+            };
+
+            Dictionary<string, List<DataPoint>> dataDict = new Dictionary<string, List<DataPoint>>();
+            foreach (var responseData in analyticsResponse.Response)
+            {
+                List<DataPoint> dataPoints1 = new List<DataPoint>();
+                foreach (var metric in responseData.Metrics)
+                {
+                    DateRangeValues values = metric;
+                    for (int k = 0; k < values.Values.Count; k++)
+                    {
+                        dataPoints1.Add(new DataPoint(chart, double.Parse(values.Values[k].ToString())));
+                    }
+                }
+                dataDict.Add(responseData.Dimension[0], dataPoints1);
+            }
+
+            analyticsResponse.DataPoints = dataDict;
+            List<ChartModel> model = new List<ChartModel>();
+            foreach (var key in analyticsResponse.DataPoints.Keys) {
+                model.Add(new ChartModel() { dataPoints = analyticsResponse.DataPoints[key], showInLegend = true, name = key, type = chart, axisYType="secondary" });
+            }
+
+            analyticsResponse.DataObject = JsonConvert.SerializeObject(model);
+
+            return View(analyticsResponse);
+        }
+
         private Data.Items.Item GetSelectedItemFromDroplistField(Data.Items.Item item, string fieldName)
         {
             Data.Fields.Field field = item.Fields[fieldName];
@@ -36,6 +83,19 @@ namespace Sitecore.Google.Analytics.Controllers
             return item.Database.GetItem(selectedItemPath);
         }
 
+        private string GetChartName()
+        {
+            var item = RenderingContext.Current.ContextItem;
+
+            Data.Items.Item chartType = GetSelectedItemFromDroplistField(item, "GoogleAnalytics_Charts");
+            var chartValue = "";
+            if (chartType != null)
+            {
+                chartValue = chartType.Fields["Value"].GetValue(true);
+            }
+            return chartValue;
+        }
+
         private AnalyticsModel GetModel()
         {
 
@@ -44,6 +104,7 @@ namespace Sitecore.Google.Analytics.Controllers
             var viewId = item.Fields["GoogleAnalytics_Analytics_ViewId"].GetValue(true);
             var applicationName = item.Fields["GoogleAnalytics_App_Name"].GetValue(true);
             var title = item.Fields["GoogleAnalytics_Title"].GetValue(true);
+
 
             Data.Items.Item referencedDimensionItem = GetSelectedItemFromDroplistField(item, "GoogleAnalytics_Dimension");
             var dimension = "";

@@ -89,7 +89,7 @@ namespace Sitecore.Google.Analytics
                 ColumnHeader header = report.ColumnHeader;
                 var dimensionHeaders = header.Dimensions;
                 var metricHeaders = header.MetricHeader.MetricHeaderEntries;
-                if (!rows.Any())
+                if (rows == null || !rows.Any())
                 {
                     return reportResponse;
                 }

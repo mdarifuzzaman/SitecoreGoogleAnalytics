@@ -1,0 +1,57 @@
+﻿@model Sitecore.Google.Analytics.Models.AnalyticsChartResponse
+@using Sitecore.Mvc
+
+    <script>
+        var dataDict = [];
+		window.onload = function () {
+			
+        var chart = new CanvasJS.Chart("chartContainer", {
+	        animationEnabled: true,
+	        title: {
+		        text: "Product Trends By Month"
+	        },
+	        toolTip: {
+		        shared: true
+			},
+            axisX: {
+                interval: 1
+            },
+            axisY2: {
+                interlacedColor: "rgba(1,77,101,.2)",
+                gridColor: "rgba(1,77,101,.1)",
+                title: "Sample Chart"
+            },
+			data: @Html.Raw(Model.DataObject) @*[{
+		        type: "line",
+		        name: @Html.Raw(Model?.Chart),
+		        showInLegend: true,
+		        dataPoints: @Html.Raw(Model?.DataPoints)
+	        }, {
+		        type: "line",
+		        name: "Laptops",
+		        showInLegend: true,
+		        dataPoints: @Html.Raw(ViewBag.DataPoints2)
+	        }, {
+		        type: "line",
+		        name: "Mobiles",
+		        showInLegend: true,
+		        dataPoints: @Html.Raw(ViewBag.DataPoints3)
+	        }
+			]*@
+        });
+		chart.render();
+	}
+
+    </script>
+<div class="container">
+    <div class="body-content">
+        <div class="card-header">
+            <div class="card-header-title">
+                <h1>@Model.Model.Title</h1>
+            </div>
+        </div>
+        <div class="card">
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        </div>
+    </div>
+</div>
